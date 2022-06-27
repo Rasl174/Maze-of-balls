@@ -6,7 +6,7 @@ public class UserInput : MonoBehaviour
 {
     [SerializeField] private PlatformMover _platform;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.W))
         {
