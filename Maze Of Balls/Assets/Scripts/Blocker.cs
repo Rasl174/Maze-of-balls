@@ -6,10 +6,7 @@ using TMPro;
 public class Blocker : MonoBehaviour
 {
     [SerializeField] private int _countBallsForDestroy;
-    [SerializeField] private TMP_Text _currentBalls;
     [SerializeField] private TMP_Text _ballsForDestroy;
-
-    private int _ballsCount = 0;
 
     private void Start()
     {
@@ -18,14 +15,14 @@ public class Blocker : MonoBehaviour
 
     public void EnumeratorBalls()
     {
-        _ballsCount++;
-        _currentBalls.text = _ballsCount.ToString();
+        _countBallsForDestroy--;
+        _ballsForDestroy.text = _countBallsForDestroy.ToString();
         TryDestroyBlocker();
     }
 
     private void TryDestroyBlocker()
     {
-        if(_countBallsForDestroy == _ballsCount)
+        if(_countBallsForDestroy <= 0)
         {
             Destroy(gameObject);
         }

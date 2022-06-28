@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlatformMover : MonoBehaviour
 {
     [SerializeField] private float _rotationSpeed;
+    [SerializeField] private float _maxRotation;
 
-    private float _maxRotation = 0.15f;
     private Quaternion _platformRotation;
 
     private void Start()

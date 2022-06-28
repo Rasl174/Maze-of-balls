@@ -14,12 +14,12 @@ public class Ball : MonoBehaviour
     {
         if (other.TryGetComponent<Spawner>(out Spawner spawnPlatform))
         {
-            spawnPlatform.Spawn();
+            spawnPlatform.TrySpawn();
         }
         else if(other.TryGetComponent<Blocker>(out Blocker blocker))
         {
             blocker.EnumeratorBalls();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
