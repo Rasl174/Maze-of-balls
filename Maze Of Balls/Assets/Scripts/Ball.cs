@@ -21,5 +21,9 @@ public class Ball : MonoBehaviour
             blocker.EnumeratorBalls();
             gameObject.SetActive(false);
         }
+        else if(other.TryGetComponent<EndHole>(out EndHole endHole))
+        {
+            endHole.EnumeratorBalls();
+        }
     }
 }
