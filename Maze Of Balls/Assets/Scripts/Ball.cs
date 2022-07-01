@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    [SerializeField] private float _minSize;
+    [SerializeField] private float _maxSize;
+
     private void Start()
     {
-        float size = Random.Range(-0.4f, -0.2f);
+        float size = Random.Range(_minSize, _maxSize);
         transform.localScale = new Vector3(size, size, size);
     }
 
