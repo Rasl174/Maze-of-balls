@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    [SerializeField] private Transform _target;
+    [SerializeField] private List<Transform> _targets;
     [SerializeField] private float _smooth;
     [SerializeField] private Vector3 _offset;
 
     private void FixedUpdate()
-
     {
-        transform.position = Vector3.Lerp(transform.position, _target.position + _offset, Time.deltaTime * _smooth);
+        transform.position = Vector3.Lerp(transform.position, _targets[0].transform.position + _offset, Time.deltaTime * _smooth);
+        foreach (var target in _targets)
+        {
+            if (target.gameObject.activeSelf == false)
+            {
+                _targets.Remove(target);
+                break;
+            }
+        }
+    }
+
+    public void AddTargets(Transform ball)
+    {
+        _targets.Add(ball);
     }
 }
