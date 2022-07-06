@@ -8,8 +8,9 @@ public class Tablet : MonoBehaviour
     [SerializeField] private int _endBalls;
     [SerializeField] private TMP_Text _ballsForEnd;
     [SerializeField] private TMP_Text _currentBallsCount;
-
     [SerializeField] private Animator _animator;
+
+    public TMP_Text BallsCount => _currentBallsCount;
 
     private void Start()
     {

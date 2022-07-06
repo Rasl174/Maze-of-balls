@@ -128,3 +128,4 @@ MonoBehaviour:
   _minSize: -0.4
   _maxSize: -0.25
   _splash: {fileID: 4771464518733101942, guid: 0187c88a588c04c44b6ccbcb3653b1c9, type: 3}
+  _camera: {fileID: 0}

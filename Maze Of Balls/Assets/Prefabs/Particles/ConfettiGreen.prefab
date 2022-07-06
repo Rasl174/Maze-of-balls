@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1454843556200158, guid: a771f1d639b6be34ab98afe5e21afd63, type: 3}
       propertyPath: m_Name
-      value: ConfettiExplosionBlue 4
+      value: ConfettiGreen
       objectReference: {fileID: 0}
     - target: {fileID: 4255782917780820, guid: a771f1d639b6be34ab98afe5e21afd63, type: 3}
       propertyPath: m_RootOrder
@@ -60,8 +60,20 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 198687305301139334, guid: a771f1d639b6be34ab98afe5e21afd63, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 198687305301139334, guid: a771f1d639b6be34ab98afe5e21afd63, type: 3}
       propertyPath: ShapeModule.m_Rotation.x
-      value: -99.11
+      value: -117
+      objectReference: {fileID: 0}
+    - target: {fileID: 198687305301139334, guid: a771f1d639b6be34ab98afe5e21afd63, type: 3}
+      propertyPath: ShapeModule.m_Rotation.y
+      value: -35.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 198687305301139334, guid: a771f1d639b6be34ab98afe5e21afd63, type: 3}
+      propertyPath: ShapeModule.m_Rotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198687305301139334, guid: a771f1d639b6be34ab98afe5e21afd63, type: 3}
       propertyPath: ShapeModule.radius.value
@@ -73,11 +85,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198687305301139334, guid: a771f1d639b6be34ab98afe5e21afd63, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 10
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 198687305301139334, guid: a771f1d639b6be34ab98afe5e21afd63, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 198687305301139334, guid: a771f1d639b6be34ab98afe5e21afd63, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
-      value: 3
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 198687305301139334, guid: a771f1d639b6be34ab98afe5e21afd63, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198687305301139334, guid: a771f1d639b6be34ab98afe5e21afd63, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 199374556959503082, guid: a771f1d639b6be34ab98afe5e21afd63, type: 3}
       propertyPath: m_Materials.Array.size

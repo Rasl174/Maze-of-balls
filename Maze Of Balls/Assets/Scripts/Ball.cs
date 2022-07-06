@@ -7,17 +7,20 @@ public class Ball : MonoBehaviour
     [SerializeField] private float _minSize;
     [SerializeField] private float _maxSize;
     [SerializeField] private ParticleSystem _splash;
+    [SerializeField] private CameraMovement _camera;
 
     private MeshRenderer _mesh;
     private Rigidbody _body;
 
     private void Start()
     {
+        _camera = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
         _body = gameObject.GetComponent<Rigidbody>();
         _mesh = gameObject.GetComponent<MeshRenderer>();
         float size = Random.Range(_minSize, _maxSize);
         transform.localScale = new Vector3(size, size, size);
         _body.velocity = new Vector3(0, -2, 0);
+        _camera.AddTargets(gameObject.transform);
     }
 
     private void Update()
@@ -46,6 +49,10 @@ public class Ball : MonoBehaviour
             endHole.EnumeratorBalls();
             SetColor();
             Instantiate(_splash, gameObject.transform.position, Quaternion.identity);
+            gameObject.SetActive(false);
+        }
+        else if(other.TryGetComponent<FloorDestroyer>(out FloorDestroyer destroyer))
+        {
             gameObject.SetActive(false);
         }
     }

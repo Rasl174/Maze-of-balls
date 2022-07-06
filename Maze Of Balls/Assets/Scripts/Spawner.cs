@@ -8,7 +8,6 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Ball[] _balls;
     [SerializeField] private int _spawnCount;
     [SerializeField] private TMP_Text _countBallsText;
-    [SerializeField] private CameraMovement _cameraMovement;
 
     private Vector3 _spawnPosition;
     private int _ballIndex;
@@ -37,7 +36,6 @@ public class Spawner : MonoBehaviour
             _ballIndex = Random.Range(0, _balls.Length);
             Instantiate(_balls[_ballIndex], _spawnPosition, Quaternion.identity);
             _spawnCount--;
-            //_cameraMovement.AddTargets(_balls[_ballIndex].gameObject.transform);
         }
     }
 }
