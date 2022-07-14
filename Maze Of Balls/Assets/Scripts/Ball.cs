@@ -36,9 +36,11 @@ public class Ball : MonoBehaviour
         if (other.TryGetComponent<Spawner>(out Spawner spawnPlatform))
         {
             spawnPlatform.TrySpawn();
+            spawnPlatform.StartAnimation();
         }
         else if(other.TryGetComponent<Blocker>(out Blocker blocker))
         {
+            blocker.StartAnimation();
             blocker.EnumeratorBalls();
             SetColor();
             Instantiate(_splash, gameObject.transform.position, Quaternion.identity);

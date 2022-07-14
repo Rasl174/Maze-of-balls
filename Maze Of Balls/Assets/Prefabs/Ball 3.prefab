@@ -127,5 +127,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minSize: -0.4
   _maxSize: -0.25
-  _splash: {fileID: 4771464518733101942, guid: 0187c88a588c04c44b6ccbcb3653b1c9, type: 3}
+  _splash: {fileID: 2050260343934385964, guid: 7fff9156a9333b04f830dba6ae5a7f33, type: 3}
   _camera: {fileID: 0}
