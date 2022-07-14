@@ -8,6 +8,9 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float _smooth;
     [SerializeField] private Vector3 _offset;
     [SerializeField] private EndHole _endHole;
+    [SerializeField] private int _endTimer;
+
+    private float _timer = 0;
 
     private void FixedUpdate()
     {
@@ -25,12 +28,21 @@ public class CameraMovement : MonoBehaviour
         }
         else
         {
-            _endHole.DoEndGame();
+            _timer += Time.deltaTime;
+            if(_timer >= _endTimer)
+            {
+                _endHole.DoEndGame();
+            }
         }
     }
 
     public void AddTargets(Transform ball)
     {
         _targets.Add(ball);
+    }
+
+    public void AddAlternativeTarget(Transform tablet)
+    {
+        _targets.Add(tablet);
     }
 }

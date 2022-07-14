@@ -6,8 +6,10 @@ public class EndHole : MonoBehaviour
 {
     [SerializeField] private Tablet _tablet;
     [SerializeField] private ParticleSystem _stream;
+    [SerializeField] private ParticleSystem _glow;
     [SerializeField] private List<ParticleSystem> _confetties;
     [SerializeField] private EndGameScreen _endGameScreen;
+    [SerializeField] private CameraMovement _cameraMovement;
 
     private int _ballsCount;
     private int _playingCount = 0;
@@ -25,7 +27,11 @@ public class EndHole : MonoBehaviour
         _ballsCount++;
         _tablet.AddBalls(_ballsCount);
         _tablet.StartAnimation();
-        _stream.Play();
+        if(_glow.isPlaying == false)
+        {
+            _glow.Play();
+            _stream.Play();
+        }
     }
 
     public void DoEndGame()
@@ -38,6 +44,7 @@ public class EndHole : MonoBehaviour
                 confetti.Play();
             }
             _endGameScreen.GameOver();
+            _cameraMovement.AddAlternativeTarget(_tablet.transform);
         }
     }
 }
